@@ -38,7 +38,7 @@ if(isset($_POST["submit"])){
         $_SESSION['username']=$row['username'];
         $_SESSION['userid']=$row['userid'];
         if(isset($_POST["logged"])){
-        
+
         setcookie('username',$row['username'], time() + (86400 * 30), "/");}
         header("Location: index.php");
         return;

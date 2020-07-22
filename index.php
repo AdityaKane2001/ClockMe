@@ -20,7 +20,7 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-      <title>CBusie</title>
+      <title>ClockMe</title>
 
     </head>
     <body>
@@ -42,8 +42,8 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
 
       <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-         <img src="images/logo.png" width="35" height="35" class="d-inline-block align-top" alt="CBusie" loading="lazy">
-         CBusie
+         <img src="images/logo.png" width="35" height="35" class="d-inline-block align-top" alt="ClockMe" loading="lazy">
+         ClockMe
           </a>
           <div class="navbar-nav" >
 
@@ -57,13 +57,13 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
           if(isset($_SESSION['userid'])){
 
             echo('<p class="nav-item navbar-text"  style="color:#cccccc;position:fixed;right:30px;">Welcome,'.$_SESSION['username'].'</p>');
-            echo('<a class="nav-item nav-link " href="timer.php">CBusie Timer&#8482; </a>');
+            echo('<a class="nav-item nav-link " href="timer.php">ClockMe Timer&#8482; </a>');
             echo('<a class="nav-item nav-link " href="logout.php">Logout</a>');
 
 
           }
           else{
-            echo('<a class="nav-item nav-link " href="timer.php">CBusie Timer&#8482; </a>');
+            echo('<a class="nav-item nav-link " href="timer.php">ClockMe Timer&#8482; </a>');
             echo('<a class="nav-item nav-link" href="login.php">Login<span class="sr-only"></span></a>');
 
 
@@ -82,7 +82,7 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
           <div class="container">
 
 
-          <h1 style="color:#ff751a;">CBusie</h1>
+          <h1 style="color:#ff751a;">ClockMe</h1>
           <p class="lead"style="color:#f0f0f0;" >Track your time while you savour it.</p>
           </div>
         </div>
@@ -90,7 +90,7 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
 
         <div class="container">
 
-        <p class="lead" style="font-size:20px;text-align: center;">CBusie tracks your time effortlessly so that you can focus on what's truly important: working! </p><br><br>
+        <p class="lead" style="font-size:20px;text-align: center;">ClockMe tracks your time effortlessly so that you can focus on what's truly important: working! </p><br><br>
 
         <div class="row">
           <div class="col-sm-6">
@@ -121,7 +121,7 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
           <p class="lead" style="font-size:35px;text-align: center;">Simple, Intutive Design</p><br><br><br>
           <div class="row" >
             <div class="col-sm-6">
-              <p class="lead" style="font-size:20px;">Design of the CBusie Timer&#8482; is designed to
+              <p class="lead" style="font-size:20px;">Design of the ClockMe Timer&#8482; is designed to
                 promote effortless and easy management of time. The design works on most of the browsers and is light,yet modern </p>
             </div>
             <div class="col-sm-6">
@@ -145,7 +145,7 @@ height: 400px;"  alt="timer">
             </div>
             <div class="col-sm-6">
 
-              <p class="lead" style="font-size:20px;">CBusie Timer&#8482; is equipped with robust project management features which allow
+              <p class="lead" style="font-size:20px;">ClockMe Timer&#8482; is equipped with robust project management features which allow
                 you to track,summarize,analyse the time spent for a particular project. As they say, "Every minute counts!"</p>
 
             </div>
@@ -157,7 +157,7 @@ height: 400px;"  alt="timer">
                     <p class="lead" style="font-size:35px;text-align: center;">Dark Mode<img src="images/dark.png" height=35px width=35px></p><br><br><br>
                     <div class="row" >
                       <div class="col-sm-6">
-                        <p class="lead" style="font-size:20px;">CBusie Timer&#8482; features Dark Mode , whichis easy on the eyes. Built for people who live their day in the nights, our dark mode is as good as it comes. Happy working! </p>
+                        <p class="lead" style="font-size:20px;">ClockMe Timer&#8482; features Dark Mode , whichis easy on the eyes. Built for people who live their day in the nights, our dark mode is as good as it comes. Happy working! </p>
                       </div>
                       <div class="col-sm-6">
                         <img src="images/dark_mode.gif" style=" object-fit: cover;
@@ -187,7 +187,7 @@ height: 400px;"  alt="timer">
 
 
 <a href="timer.php"  >
-    <button type="button" name="timer_button" style="border: none;border-radius: 4px;font-size:30px;">CBusie Timer</button></a>
+    <button type="button" name="timer_button" style="border: none;border-radius: 4px;font-size:30px;">ClockMe Timer</button></a>
 
   </div>
 

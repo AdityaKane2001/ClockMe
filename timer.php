@@ -107,7 +107,7 @@ if(isset($_POST['end_time'])){
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CBusie Timer Page</title>
+    <title>ClockMe Timer Page</title>
     <meta name="description" content="Add a dark-mode theme toggle with a Bootstrap Custom Switch">
 
     <meta property="og:site_name" content="GitHub">
@@ -126,7 +126,7 @@ if(isset($_POST['end_time'])){
     <div class="container d-flex p-3 mx-auto flex-column ">
         <header >
 
-            <h3 class="float-left" style="color:#eb6b21"><b>CBusie</b></h3>
+            <h3 class="float-left" style="color:#eb6b21"><b>ClockMe</b></h3>
 
             <nav class="nav justify-content-center float-right ">
 
@@ -154,7 +154,7 @@ if(isset($_POST['end_time'])){
 
                     <div class="card">
                         <div class="card-header shadow-sm bg-white">
-                            <h1 style="color:#eb6b21">CBusie Timer&#8482;</h1>
+                            <h1 style="color:#eb6b21">ClockMe Timer&#8482;</h1>
                             <?php
 
 
