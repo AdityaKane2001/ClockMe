@@ -38,7 +38,6 @@ if(isset($_POST["submit"])){
         $_SESSION['username']=$row['username'];
         $_SESSION['userid']=$row['userid'];
         if(isset($_POST["logged"])){
-
         setcookie('username',$row['username'], time() + (86400 * 30), "/");}
         header("Location: index.php");
         return;
@@ -63,7 +62,13 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Login</title>
@@ -119,7 +124,7 @@ if(isset($_POST["submit"])){
     </form>
     </div>
 
-    <p class='lead' style='font-size:15px'>By clicking 'Login' ,you agree to our EULA(End User License Agreement) and Terms of Service. <br>By selecting 'Keep me logged in', you agree to our cookie policy.<br>This cookie is valid for 30 days and you will need to relogin after that time.</p>
+    <p class='lead' style='font-size:15px'>By clicking 'Login' ,you agree to our <a href="eula.php">EULA(End User License Agreement) and Terms of Service.</a><br>By selecting 'Keep me logged in', you agree to our <a href="eula.php">cookie policy.</a><br>This cookie is valid for 30 days and you will need to relogin after that time.</p>
     <a href="index.php">Back to Home</a><br>
     <a href="signup.php">Sign Up instead</a>
   </div>

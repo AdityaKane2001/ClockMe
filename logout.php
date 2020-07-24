@@ -1,7 +1,6 @@
 <?php
 
 setcookie('username', false, 1,"/");
-
 session_start();
 session_destroy();
 
