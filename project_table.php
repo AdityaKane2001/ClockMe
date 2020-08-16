@@ -4,6 +4,8 @@ require_once 'pdo.php';
 session_start();
 
 
+
+
 if(isset($_POST['end_time'])){
 
   $getstmt=$pdo->prepare("SELECT projectid as pid from projects where userid=:uid and projectname=:projname");
@@ -28,8 +30,8 @@ if(isset($_POST['end_time'])){
 
 
 
-$stmt=$pdo->prepare("SELECT projects.projectname as project,SUM(age(time.end_time,time.start_time)) as sumtime
-                      FROM TIME INNER JOIN PROJECTS ON projects.projectid=time.projectid where time.userid=:uid and projects.userid=:uid GROUP BY projects.projectname;
+$stmt=$pdo->prepare("SELECT projects.projectname as project,SEC_TO_TIME(SUM(TIME_TO_SEC(end_time)-TIME_TO_SEC(time.start_time))) as sumtime FROM TIME JOIN PROJECTS ON
+                    projects.projectid=time.projectid where time.userid=:uid and projects.userid=:uid GROUP BY projects.projectname
                     ");
 $stmt->execute(array(":uid"=>$_SESSION['userid']));
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -51,8 +53,8 @@ $op=$op.'  <div class="row">
     <div class="col-sm-6">
       <div class="controls">
 
-          <button class="button button1"  onclick="startPause(\'startPause'.$count.'\','.$count.')" id="startPause'.$count.'">
-              <b>Start</b>
+      <button class=" button button1"
+           onclick="startPause(\'startPause'.$count.'\','.$count.')" id="startPause'.$count.'">  Start
           </button>
         </div>
 

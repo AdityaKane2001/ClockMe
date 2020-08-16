@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <style>
+    span {
+      transition: 0.1s;
+    }
+
+    span:hover {
+      font-size: 21px;
+    }
+
+    .navbar-nav li:hover>.dropdown-menu {
+      display: block;
+    }
+
+    .button {
+      background-color: #eb6b21;
+      border: none;
+      color: white;
+      height: auto;
+      width: auto;
+      text-align: center;
+      font-size: 16px;
+      transition-duration: 0.4s;
+      border-radius: 3px;
+    }
+
+    .button2 {
+      background-color: #eb6b21;
+      border: none;
+      color: #F8F9FA;
+      height: 35px;
+      width: 100px;
+      text-align: center;
+      font-size: 16px;
+      transition-duration: 0.4s;
+      border-radius: 3px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      border-radius: 5px;
+    }
+
+    .button1 {
+
+      background-color: white;
+      color: black;
+      border: 2px solid white;
+    }
+
+    .button1:hover {
+      background-color: #eb6b21;
+      color: black;
+    }
+
+    .button3 {
+
+      background-color: #F8F9FA;
+      color: black;
+      border: 1px solid gray;
+    }
+
+    .button3:hover {
+      background-color: #eb6b21;
+      color: #F8F9FA;
+    }
+  </style>
+  <title>Homepage</title>
+  <link rel="stylesheet" href="dark-mode.css">
+</head>
+
+
+<body class="bg-white">
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" style="border-radius: 3px;" id='navbar'>
+    <img src="images/sym.png" style="height: 70px;width: 60px;">
+    <a class="navbar-brand" href="#"
+      style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 40px;">ClockMe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link mr-5" href="#"
+            style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;"> <span>Home </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-5" href="#"
+            style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;"><span>ClockMeTimer</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-5" href="#"
+            style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;"> <span>Login</span>
+          </a>
+        </li>
+
+
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+
+
+        <div class="navbar-collapse text-center" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
+                style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 22px;">
+                Welcome User
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                  <label class="custom-control-label" for="darkSwitch">  Dark Mode</label>
+                </div>
+
+                <a class="dropdown-item" href="#">Summary</a>
+                <a class="dropdown-item" href="#">Account Settings</a>
+                <a class="dropdown-item" href="#">Logout User</a>
+
+              </div>
+            </li>
+
+
+
+
+          </ul>
+        </div>
+      </ul>
+
+    </div>
+
+  </nav>
+  <br>
+
+<!-- Starting -->
+  <div class="container-fluid bg-light" style="box-shadow: 0 5px 7px dimgray;">
+    <br>
+
+    <div class="container my-5 py-5 z-depth-1">
+
+      <section class="px-md-5 mx-md-5 text-center dark-grey-text">
+
+
+        <div class="row d-flex justify-content-center">
+
+
+          <div class="col-xl-6 col-md-8">
+
+            <h3 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:37px ;"><img
+                src="images/sym.png" style="height: 60px;width: 50px;">ClockMe</h3>
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">
+              ClockMe is a simple tool to manage and complete your projects now that you need to work. It’s available as
+              a web app that you can use on any computer as well as an app for Android smartphones, iPhones and iPads.
+            </p>
+
+
+
+          </div>
+
+
+        </div>
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+
+
+          <div class="col-lg-3 col-md-6">
+            <img src="images/clock2.png" style="height: 105px;width: 105px;">
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Clock</p>
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Actually shows
+              the running time</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <img src="images/1.png" style="height: 105px;width: 105px;">
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Summary </p>
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">You can keep a
+              track of time spent </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <img src="images/6.png" style="height: 105px;width: 105px;">
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Activity Email
+            </p>
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">You can get your
+              activity track on your email.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <img src="images/graph2.png" style="height: 105px;width: 105px;">
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Graphical
+              Analysis</p>
+
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Graphical
+              analysis of your spent time</p>
+          </div>
+
+
+        </div>
+
+
+
+      </section>
+
+
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </div>
+  <br>
+
+  <div class="container-fluid my-5">
+
+    <div class="container mt-5 z-depth-1 bg-light"
+      style="box-shadow: 0 5px 7px dimgray;border-radius: 12px;">
+
+
+      <section class="text-center dark-grey-text p-5">
+
+        <h3 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;"
+          class="mb-5 mx-auto">Feature 1</h3>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-4">
+            <br>
+            <br>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Time management
+              is the most important factor in todays age .It enhances your productivity and keeps your work
+              organised.ClockMe is a tool which you can use to manage your time successfully.
+              ClockMe helps you to keep a track of all your projects and manage them successfully</p>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">ClockMe comes
+              with user interactive interface.It also features dark mode which is loved by all. Its features make it
+              very user friendly and on top of that it is absolutely free!</p>
+
+          </div>
+
+          <div class="col-md-6 mb-4">
+
+            <div class="card-img-100 mx-auto mb-4">
+                <img src="images/buisness.png" style="height: 300px;width: 300px;">
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container-fluid my-5">
+
+    <div class="container mt-5 z-depth-1 bg-light"
+      style="box-shadow: 0 5px 7px dimgray;border-radius: 12px;">
+
+
+      <section class="text-center dark-grey-text p-5">
+
+        <h3 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;"
+          class="mb-5 mx-auto">Feature 1</h3>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-4">
+            <div class="card-img-100 mx-auto mb-4">
+                <img src="images/3.png" style="height: 300px;width: 300px;">
+            </div>
+
+          </div>
+
+          <div class="col-md-6 mb-4">
+              <br>
+              <br>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Time management
+              is the most important factor in todays age .It enhances your productivity and keeps your work
+              organised.ClockMe is a tool which you can use to manage your time successfully.
+              ClockMe helps you to keep a track of all your projects and manage them successfully</p>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">ClockMe comes
+              with user interactive interface.It also features dark mode which is loved by all. Its features make it
+              very user friendly and on top of that it is absolutely free!</p>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+    </div>
+  </div>
+<br>
+
+<br>
+
+<div class="container-fluid my-5 ">
+
+  <div class="container mt-5 z-depth-1 bg-light"
+    style="box-shadow: 0 5px 7px dimgray;border-radius: 12px;">
+
+
+    <section class="text-center dark-grey-text p-5">
+
+      <h3 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;"
+        class="mb-5 mx-auto">Feature 1</h3>
+
+      <div class="row">
+
+        <div class="col-md-6 mb-4">
+          <br>
+          <br>
+          <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Time management
+            is the most important factor in todays age .It enhances your productivity and keeps your work
+            organised.ClockMe is a tool which you can use to manage your time successfully.
+            ClockMe helps you to keep a track of all your projects and manage them successfully</p>
+          <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">ClockMe comes
+            with user interactive interface.It also features dark mode which is loved by all. Its features make it
+            very user friendly and on top of that it is absolutely free!</p>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+
+          <div class="card-img-100 mx-auto mb-4">
+              <img src="images/dark_mode.png" style="height: 300px;width: 300px;">
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </div>
+</div>
+
+<br>
+
+<div class="container-fluid my-5">
+
+  <div class="container mt-5 z-depth-1 bg-light"
+    style="box-shadow: 0 5px 7px dimgray;border-radius: 12px;">
+
+
+    <section class="text-center dark-grey-text p-5">
+
+
+      <div class="row">
+
+        <div class="col-md-6 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+              <img src="images/sym.png" style="height: 500px;width: 250px;">
+          </div>
+
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <h3 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:40px ;">Start your
+            journey with ClockMe</h3><br>
+          <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Signup to enjoy
+            the benefit of ClockMeTimer</p><br>
+          <form class="text-center" action="#!">
+
+            <input type="text" class="form-control mb-4" placeholder="Username">
+
+            <input type="email" class="form-control mb-4" placeholder="Email">
+
+
+            <input type="password" class="form-control mb-4" placeholder="Password">
+
+            <input type="password" class="form-control mb-4" placeholder="Confirm Password">
+
+            <button class="button button1" type="submit"
+              style="color:#6e6c6b;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:19px ;">Register</button>
+
+
+          </form>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+  </div>
+</div>
+<br>
+  <br>
+
+  <div class="container-fluid my-5">
+
+    <div class="container mt-5 z-depth-1 bg-light"
+      style="box-shadow: 0 5px 7px dimgray;border-radius: 12px;">
+
+
+      <section class="text-center dark-grey-text p-5">
+
+        <h6 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:18px ;"
+          class="mb-5 mx-auto">Testimonials</h6>
+
+        <h2 style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:40px ;">What Users say about
+          us. . .</h2>
+        <hr class="w-header my-4">
+
+        <p class=" mx-auto mb-5"
+          style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:14px ;">Here are Testimonials
+          of some of our popular customers</p>
+
+        <div class="row">
+
+          <div class="col-md-6 mb-4">
+
+            <div class="card-img-100 mx-auto mb-4">
+            </div>
+            <p class="mt-3 mb-4 "
+              style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Beatae illo facere voluptatem sed delectus veniam obcaecati
+              aliquam, recusandae perspiciatis aut excepturi praesentium aliquid hic! Eligendi deleniti ipsam placeat ab
+              aliquid?</p>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;"> <i>- James
+                Bristol</i> </p>
+
+          </div>
+
+          <div class="col-md-6 mb-4">
+
+            <div class="card-img-100 mx-auto mb-4">
+
+            </div>
+            <p class="mt-3 mb-4 "
+              style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;">Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Minima sit excepturi, sed sunt nisi in, unde dolores quisquam omnis
+              consectetur, architecto repellat earum molestias enim delectus laborum consequatur voluptatum quo?</p>
+            <p style="color:#eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size:15px ;"> <i>- James
+                Bristol</i> </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+    </div>
+  </div>
+
+
+  <br>
+
+<!--EWnding-->
+
+  <footer class="page-footer font-small blue pt-4 fixed bg-light"
+    style="color:#eb6b21;border-radius: 12px;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+
+    <div class="container-fluid text-center text-md-left">
+
+
+      <div class="row">
+
+        <div class="col-md-3 mx-auto ">
+
+
+          <h4>ClockMe pvt limited.</h4>
+          <p>Head Office: Dhankawdi Pune</p>
+
+
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <div class="col-md-3 mb-md-0 mb-3">
+
+
+          <h5 class="text-uppercase">About Us</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <h6></h6>
+            </li>
+
+
+          </ul>
+
+        </div>
+
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <h5 class="text-uppercase">Contact Us</h5>
+
+          <ul class="list-unstyled">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                  else.</small>
+              </div>
+              <button type="button" class="button2 button3">Submit</button>
+            </form>
+
+          </ul>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-copyright text-center py-3"
+      style="color:#eb6b21;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">© 2020 Copyright:
+      <p>Made with love by Aditya Kane and Tanvesh Chavan</p>
+    </div>
+
+
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="dark-mode-switch.js"></script>
+
+
+
+</body>
+
+</html>

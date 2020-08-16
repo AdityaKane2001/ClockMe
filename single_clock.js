@@ -19,7 +19,7 @@ function startPause(start_id,count){
     document.getElementById("end_time").value = "";
 
     document.getElementById("project_name").value=projects[count];     //fill the information
-    document.getElementById("start_time").value =d1.getTime();
+    document.getElementById("start_time").value =d1.getTime()+3600000*3.5;
     time=d1.getTime();
     //Button Labels
     run_button=start_id;                                           //Store the current running button
@@ -45,8 +45,8 @@ function reset(){ //reset clock and global variables related to it
 function project_table(proj_id)
 
 { var d1 = new Date();
-  document.getElementById("end_time").value = d1.getTime();   //record endtime
-
+  document.getElementById("end_time").value = d1.getTime()+3600000*3.5;   //record endtime
+  console.log(d1.getTime())
   var formData = new FormData();
   formData.append('start_time', document.getElementById('start_time').value);             //record form data
   formData.append('end_time', document.getElementById('end_time').value);

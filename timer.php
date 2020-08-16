@@ -6,10 +6,24 @@ session_start();
 if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
 
   $_SESSION['username']=$_COOKIE['username'];
-  $stmt=$pdo->prepare("SELECT userid,username,password from users where username=:uname");
+  $stmt=$pdo->prepare("SELECT userid,username,password,verified from users where username=:uname");
   $stmt->execute(array(':uname'=>$_SESSION['username']));
   $row=$stmt->fetch(PDO::FETCH_ASSOC);
   $_SESSION['userid']=$row['userid'];
+  $_SESSION['verified']=$row['verified'];
+
+}
+else{
+  if(isset($_SESSION["username"])){
+
+    $stmt=$pdo->prepare("SELECT userid,username,password,verified from users where username=:uname");
+    $stmt->execute(array(':uname'=>$_SESSION['username']));
+    $row=$stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['userid']=$row['userid'];
+    $_SESSION['verified']=$row['verified'];
+
+  }
+
 
 }
 
@@ -17,6 +31,11 @@ if(isset($_COOKIE['username'])&&$_COOKIE['username']!==false){
 if(!isset($_SESSION["username"])){
 
 die("<a href='login.php'>Login</a> first.<br>");
+}
+
+elseif ($_SESSION['verified']!=1) {
+
+  die("<a href='confirm_email.php'>Verify</a> your email address first.<br>");
 }
 
 
@@ -27,8 +46,8 @@ die("<a href='login.php'>Login</a> first.<br>");
 
 #$_SESSION["one_instance"]=1;
 
-$stmt=$pdo->prepare("SELECT projects.projectname as project,SUM(age(time.end_time,time.start_time)) as sumtime FROM TIME
-                    INNER JOIN PROJECTS ON projects.projectid=time.projectid where time.userid=:uid and projects.userid=:uid GROUP BY projects.projectname;
+$stmt=$pdo->prepare("SELECT projects.projectname as project,SEC_TO_TIME(SUM(TIME_TO_SEC(time.end_time)-TIME_TO_SEC(time.start_time))) as sumtime FROM TIME JOIN PROJECTS ON
+                    projects.projectid=time.projectid where time.userid=:uid and projects.userid=:uid GROUP BY projects.projectname
                     ");
 $stmt->execute(array(":uid"=>$_SESSION['userid']));
 $rows=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -75,9 +94,7 @@ foreach ($rows as $row) {
 
 ?>
 <html lang="en" class="h-100">
-<script type="text/javascript">
 
-</script>
 <head>
   <style>
       .button {
@@ -134,36 +151,135 @@ foreach ($rows as $row) {
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="dark-mode.css">
-    <script src="single_clock.js">
+    <script src="single_clock.js"></script>
 
-    </script>
+    <link rel="stylesheet" href="dark-mode.css">
+
+
 </head>
 
-<body class="bg-white text-center d-flex h-100">
+<body class="bg-white text-center">
     <div class="container d-flex p-3 mx-auto flex-column ">
-        <header >
 
-            <h3 class="float-left" style="color:#eb6b21"><b>ClockMe</b></h3>
+
+
+        <header >
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" style="border-radius: 3px;" id='navbar'>
+            <img src="images/sym.png" style="height: 70px;width: 60px;"><span style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 40px;">ClockMe</span>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="nav-link mr-5" href="index.php"
+                    style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;"> <span>Home </span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link mr-5" href="timer.php"
+                    style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 20px;"><span>ClockMeTimer</span></a>
+                </li>
+
+
+
+              </ul>
+              <ul class="navbar-nav ml-auto bg-light">
+
+
+                <div class="navbar-collapse text-center bg-light" id="navbarResponsive">
+                  <ul class="navbar-nav ml-auto bg-light">
+
+                    <li class="nav-item dropdown bg-light">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="color:#eb6b21" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <?php echo($_SESSION['username']); ?>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right bg-light" aria-labelledby="navbarDropdownMenuLink">
+
+                                     <div class="dropdown-item">
+
+                                          <div class="custom-control custom-switch">
+                                            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                              <label class="custom-control-label" for="darkSwitch" style="color:#eb6b21">Dark Mode</label>
+
+                                          </div>
+
+                                          <script src="dark-mode-switch.js"></script>
+
+                                      </div>
+                                      <a href="timer.php" class="nav-link dropdown-item" style="color:#eb6b21">ClockMe Timer&#8482;</a>
+                                      <a href="summary.php" class="nav-link dropdown-item " style="color:#eb6b21">Archives</a>
+                                        <a href="account.php" class="nav-link dropdown-item" style="color:#eb6b21">Account Settings</a>
+                                        <a href="logout.php" class="nav-link dropdown-item" style="color:#eb6b21">Logout</a>
+                                </div>
+
+                  <!--
+
+                        <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false"
+                          style="color: #eb6b21;font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 22px;">
+                          Welcome, '.$_SESSION['username'].'
+                        </a>
+
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                          <div class="custom-control custom-switch ">
+                            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                            <label class="custom-control-label" for="darkSwitch" style="color:#eb6b21">  Dark Mode</label>
+        </div>
+
+                          <a class="dropdown-item " style="color:#eb6b21" href="summary.php">Summary</a>
+                          <a class="dropdown-item " style="color:#eb6b21" href="account.php">Account Settings</a>
+                          <a class="dropdown-item " style="color:#eb6b21" href="logout.php">Logout</a>
+  <div class="custom-control custom-switch ">
+                            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                            <label class="custom-control-label" for="darkSwitch" style="color:#eb6b21">  Dark Mode</label>
+        </div>
+
+      -->
+
+
+                      </div>
+
+                </div>
+              </ul>
+
+            </div>
+
+          </nav>
+
+
+
+          <!--  <h3 class="float-left" style="color:#eb6b21"><b>ClockMe</b></h3>
 
             <nav class="nav justify-content-center float-right ">
 
-                   <a class="nav-link "  style="color:#eb6b21" href="index.php">Home</a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="color:#eb6b21" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+             <a class="nav-link dropdown-tem "  style="color:#eb6b21" href="index.php">Home</a>
+             <div class="dropdown-item">
 
-                <div class="nav-link">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                      <label class="custom-control-label" for="darkSwitch" style="color:#eb6b21">Dark Mode</label>
 
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                        <label class="custom-control-label" for="darkSwitch" style="color:#eb6b21">Dark Mode</label>
-                    </div>
+                  </div>
 
-                    <script src="dark-mode-switch.min.js"></script>
+                  <script src="dark-mode-switch.min.js"></script>
 
-                </div>
-                <div class="nav-link">
-                  <a href="logout.php" style="color:#eb6b21">Logout</a>
-                </div>
-            </nav>
-        </header>
+              </div>
+              <a href="timer.php" class="nav-link dropdown-item" style="color:#eb6b21">ClockMe Timer&#8482;</a>
+              <a href="summary.php" class="nav-link dropdown-item " style="color:#eb6b21">Archives</a>
+                <a href="account.php" class="nav-link dropdown-item" style="color:#eb6b21">Account Settings</a>
+                <a href="logout.php" class="nav-link dropdown-item" style="color:#eb6b21">Logout</a>
+        </div>
+
+      </nav>-->
+    </header><br><br><br><br>
 
         <div class="container ">
             <div class="row mt-5 ">
@@ -171,7 +287,7 @@ foreach ($rows as $row) {
 
                     <div class="card">
                         <div class="card-header shadow-sm bg-white">
-                            <h1 style="color:#eb6b21">ClockMe Timer&#8482;</h1>
+                            <h1 style="color:#eb6b21">ClockMe Timer</h1>
                             <?php
 
 
@@ -215,7 +331,7 @@ foreach ($rows as $row) {
                                 <b>Project Name</b>
                               </div>
                               <div class="col-sm-4">
-                                <b>Time spent<br><p class="lead" style="font-size:15px;">Days:Hours:Minutes:Seconds</p></b>
+                                <b>Time spent<br><p class="lead" style="font-size:15px;">Hours:Minutes:Seconds</p></b>
                               </div>
 
                             </div><br>
@@ -240,9 +356,9 @@ foreach ($rows as $row) {
                                 <div class="col-sm-6">
                                   <div class="controls">
 
-                                      <button class=" button button1"
-                                           onclick="startPause(\'startPause'.$count.'\','.$count.')" id="startPause'.$count.'">
-                                        <b>Start</b>
+                                  <button class=" button button1"
+                                       onclick="startPause(\'startPause'.$count.'\','.$count.')" id="startPause'.$count.'">
+                                        Start
                                       </button>
                                     </div>
 
@@ -273,7 +389,7 @@ foreach ($rows as $row) {
                 </div>
             </div>
             <br><br><br>
-              <a href="summary.php"><button class="button button1" type="button"><b>Summary</b></button></a>
+            <a href="summary.php"><button class="button button1" type="button"><b>Summary</b></button></a>
 
         </div>
         <!-- Button trigger modal -->
@@ -286,7 +402,7 @@ foreach ($rows as $row) {
                     <div class="modal-header bg-white">
                         <h5 class="modal-title bg-white" id="exampleModalLabel" style="color:#eb6b21 ;"><b>Add
                                 Project</b></h5>
-                        <button type="button" class="button button 1 close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true" style="color: #eb6b21;">&times;</span>
                         </button>
                     </div>
@@ -313,9 +429,7 @@ foreach ($rows as $row) {
 
 
     </div><div class="container"style="position:absolute;bottom:0;text-align: center;align-content:center;">
-      <footer>
-          <p>Made with 	&#x2764; by Aditya Kane and Tanvesh Chavan </p>
-      </footer>
+
 
     </div>
 
@@ -325,8 +439,55 @@ foreach ($rows as $row) {
       <input type="text" class="float-right ml-1" name="project_name" id="project_name" hidden>
 
 
-    </form>
+    </form><br><br><br>
 
+    <footer class="page-footer font-small blue pt-4 fixed bg-light"
+      style="color:#eb6b21;font-family: Verdana, Geneva, Tahoma, sans-serif;">
+
+
+      <div class="container-fluid text-center text-md-left">
+
+
+        <div class="row">
+
+          <div class="col-md-3 mx-auto ">
+
+
+            <h4>ClockMe</h4>
+            <p>Pune,India</p>
+
+
+          </div>
+          <hr class="clearfix w-100 d-md-none pb-3">
+
+          <div class="col-md-3 mb-md-0 mb-3">
+
+
+            <a href="about.php" style="color:#eb6b21;"><h5 class="text-uppercase">About Us</h5></a>
+
+
+
+          </div>
+
+          <div class="col-md-3 mb-md-0 mb-3">
+
+            <a href="contact.php" style="color:#eb6b21;"> <h5 class="text-uppercase">Contact Us</h5></a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="footer-copyright text-center py-3"
+        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <p>Made with 	<span style="color:red;">&#x2764;</span> by Aditya Kane and Tanvesh Chavan</p>
+      </div>
+
+
+    </footer>
 
 
 </body>
@@ -340,5 +501,7 @@ foreach ($rows as $row) {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+    <script src="dark-mode-switch.js"></script>
+
 
 </html>

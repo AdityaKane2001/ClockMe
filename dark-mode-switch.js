@@ -1,4 +1,5 @@
 const darkSwitch = document.getElementById('darkSwitch');
+
 window.addEventListener('load', () => {
   if (darkSwitch) {
     initTheme();
@@ -27,6 +28,14 @@ function initTheme() {
   darkSwitch.checked = darkThemeSelected;
   darkThemeSelected ? document.body.setAttribute('data-theme', 'dark') :
     document.body.removeAttribute('data-theme');
+    if(darkThemeSelected){
+      localStorage.setItem('chart','dark2');
+    }
+    else{
+      localStorage.setItem('chart','');
+    }
+
+
 }
 
 
@@ -40,8 +49,19 @@ function resetTheme() {
   if (darkSwitch.checked) {
     document.body.setAttribute('data-theme', 'dark');
     localStorage.setItem('darkSwitch', 'dark');
+    localStorage.removeItem('chart');
+    localStorage.setItem('chart','dark2');
+
+
+
   } else {
     document.body.removeAttribute('data-theme');
     localStorage.removeItem('darkSwitch');
+    localStorage.removeItem('chart');
+    localStorage.setItem('chart','');
+
+
   }
+  makechart();
+
 }
