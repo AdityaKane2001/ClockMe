@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/coliff/dark-mode-switch/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![BestofJS: Hot Project](https://img.shields.io/badge/bestofjs.org-Hot%20Project-orange)](https://bestofjs.org/projects/dark-mode-switch)
@@ -56,3 +57,30 @@ Works well with all the browsers [supported by Bootstrap](https://getbootstrap.c
 ## Credits
 
 Created thanks to the excellent [dark-theme](https://codyhouse.co/blog/post/dark-light-switch-css-javascript) and [local storage](https://codyhouse.co/blog/post/store-theme-color-preferences-with-localstorage) tutorials over at [codyhouse.co](https://codyhouse.co).
+=======
+# ClockMe
+
+## Track your time while you savour it
+
+A timer for all your needs.
+
+### What's new?
+
+* Improved UI for simplicity of use
+* Removed timer clock glitches
+* Intense dark mode
+* Summary of all projects
+* (For the nerds) AJAX requests for faster use
+
+
+### v1.0
+Basic core functionallity. Project system. Timer. Dark mode.
+
+### v2.0
+Fluid UI, ease of usage and faster switching. Also one can have multiple projects but can start a single one at a time.
+Summary makes it easier to see when you spent your time on a particular project. AJAX requests make the sytem even smoother to operate.
+
+
+
+Made with :heart: by Aditya Kane and Tanvesh Chavan
+>>>>>>> 4a676b33f1739dc316332cfa396775cec837785d
