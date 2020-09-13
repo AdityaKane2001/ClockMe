@@ -22,7 +22,7 @@ Fluid UI, ease of usage and faster switching. Also one can have multiple project
 Summary makes it easier to see when you spent your time on a particular project. AJAX requests make the sytem even smoother to operate.
 
 ### v3.0
-Account management,edit/delete time entries,email verification,better UI. AJAX IS EVERYWHERE (almost though)
+Account management,edit/delete time entries,email verification,better UI.
 
 Made with :heart: by Aditya Kane and Tanvesh Chavan
 
