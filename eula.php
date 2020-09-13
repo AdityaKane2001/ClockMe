@@ -8,7 +8,7 @@
     <div class="container">
       <h1 align="center">End User License Agreement (EULA) and Cookie Policy</h1>
 
-      <p> In addition to the <a href="https://www.heroku.com/policy/salesforce-heroku-msa">Heroku Terms Of Service</a>
+      <p> In addition to the <a href="https://www.000webhost.com/terms-of-use">000Webhost Terms Of Service</a>
          the following is the End User License agreement for CBusie Timer.<br>CBusie Timer collects the following information</p>
          <ul>
            <li>Your provided username</li>
