@@ -16,8 +16,8 @@
 
          </ul>
          <p>ClockMe Timer uses cookies such that these cookies expire after 30 days.The cookies are inert to and for all web activities except ClockMe Timer.One can choose not to store any cookies de-selecting 'Keep Me Logged In' option</p>
-         <p><b>CBusie Timer and its creators (Aditya Kane and Tanvesh Chavan) take no legal or ethical responsibility for any loss (physical,monetary,mental) incurred to the user.We do not guarantee security from phishing and foreign attacks.
-         The source code of CBusie Timer comes under the sole ownership of its creators (Aditya Kane and Tanvesh Chavan). The statistics provided by CBusie Timer are not to be considered for any evaluation purposes whatsoever.</b> </p>
+         <p><b>ClockMe  Timer and its creators (Aditya Kane and Tanvesh Chavan) take no legal or ethical responsibility for any loss (physical,monetary,mental) incurred to the user.We do not guarantee security from phishing and foreign attacks.
+         The source code of ClockMe Timer comes under the sole ownership of its creators (Aditya Kane and Tanvesh Chavan). The statistics provided by ClockMe Timer are not to be considered for any evaluation purposes whatsoever.</b> </p>
     </div>
   </body>
 </html>
