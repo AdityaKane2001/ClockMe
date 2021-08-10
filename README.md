@@ -1,5 +1,6 @@
 # ClockMe
-### https://aground-message.000webhostapp.com
+
+# ⚠️ No longer maintained. Archived for read-only purposes.
 
 ## Track your time while you savour it
 
